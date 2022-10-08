@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"
+      integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <nav class="navbar navbar-expand-lg bg-light shadow-sm mb-5">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              <img src="./images/LogoTassimo_HZLogo_RGB.png" alt="Logo" width="115" height="26" class="d-inline-block align-text-top" />
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Machinery</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">offers</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle active"
+                    aria-current="page"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Beverages
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">All drinks</a></li>
+                    <li><a class="dropdown-item" href="#">Coffee</a></li>
+                    <li><a class="dropdown-item" href="#">Bar</a></li>
+                    <li><a class="dropdown-item" href="#">Espresso</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <div class="me-2 mb-3 mb-lg-auto">
+                <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                  Log in
+                  <span><i class="bi bi-box-arrow-in-right"></i></span>
+                </button>
+              </div>
+              <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <!-- hidden blocks ---Modal---Toast starts-->
+      <div>
+        <!-- Modal starts-->
+        <div
+          class="modal fade"
+          id="staticBackdrop"
+          data-bs-backdrop="static"
+          data-bs-keyboard="false"
+          tabindex="-1"
+          aria-labelledby="staticBackdropLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header flex-column">
+                <button type="button" class="btn-close btn-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h4 class="modal-title" id="staticBackdropLabel">Welcome</h4>
+                <img src="./images/LogoTassimo_HZLogo_RGB.png" alt="logo" width="230" height="52" class="d-block align-text-top" />
+              </div>
+              <div class="modal-body">
+                <form class="px-4 py-3">
+                  <div class="mb-3">
+                    <label for="exampleFormEmail1" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="exampleFormEmail1" placeholder="email@example.com" />
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleFormPassword1" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="exampleFormPassword1" placeholder="Password" />
+                  </div>
+                  <div class="mb-3">
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="Check" />
+                      <label class="form-check-label" for="Check"> Remember me </label>
+                    </div>
+                  </div>
+                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="toastbtn">Sign in</button>
+                </form>
+              </div>
+              <div class="modal-footer justify-content-between">
+                <div>
+                  <a class="dropdown-item link-primary" href="#">New around here? Sign up</a>
+                  <a class="dropdown-item link-danger" href="#">Forgot password?</a>
+                </div>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- modal finishes -->
+        <!-- toast starts -->
+        <div class="position-fixed bottom-0 start-50 translate-middle-x p-3" style="z-index: 11">
+          <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="3000">
+            <div class="toast-header bg-warning">
+              <span class="me-2">
+                <i class="fa-solid fa-thumbs-up"></i>
+              </span>
+              <strong class="me-auto">Sign in successfully</strong>
+              <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body bg-info fw-bold">You can enjoy by buying our different products.</div>
+          </div>
+        </div>
+        <!-- toast finishes -->
+      </div>
+      <!-- hidden blocks finishes-->
+      <section>
+        <div class="container-fluid container-lg">
+          <div class="row flex-column flex-md-row">
+            <div class="col-12 col-md-3 col-lg-2">
+              <h4 class="text-muted">Filter by</h4>
+
+              <div class="row flex-column ps-2 mb-3">
+                <ul class="list-group">
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Brand
+                    <span class="badge bg-primary rounded-pill">23</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Beverage type
+                    <span class="badge bg-primary rounded-pill">12</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    TAS drink quantity
+                    <span class="badge bg-primary rounded-pill">18</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Size
+                    <span class="badge bg-primary rounded-pill">3</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-12 col-md-9 col-lg-10">
+              <h4 class="d-none d-md-block text-success fw-bolder">SUMMER FAVOURITES</h4>
+              <div class="row">
+                <!-- Card starts -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
+                  <div class="card text-center text-md-start h-100">
+                    <div>
+                      <img src="./images/tassimo_jacobs_caffe_crema_intenso.png" class="card-img-top w-50" alt="..." />
+                    </div>
+                    <div class="card-body">
+                      <h6 class="card-title mb-3 fw-bold"><a href="#" class="link-dark">Jacobs Caffe Crema Intenso</a></h6>
+                      <div class="">
+                        <p class="text-success mb-0">
+                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+                          ><i class="bi bi-star-half"></i><i class="bi bi-star"></i>
+                          <span>5 reviews</span>
+                        </p>
+                        <p class="text-secondary">16 drinks <i class="bi bi-dot"></i> Cup size M</p>
+                      </div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between align-items-center">
+                      <p class="m-0 fs-3 fw-bolder text-success">CHF 7.95</p>
+                      <p class="m-0">
+                        <button
+                          class="btn rounded-circle p-0"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="bottom"
+                          data-bs-html="true"
+                          title="<div class='fw-bold'><em class='text-white'>Add to my basket</em> </div>"
+                        >
+                          <span class="text-success fs-1"><i class="bi bi-plus-circle-fill"></i></span>
+                        </button>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card finishes -->
+                <!-- Card starts -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
+                  <div class="card text-center text-md-start h-100">
+                    <div class="position-relative">
+                      <img src="./images/ch_tassimo_pdp_24xpacks_cafe_crema_xl_big.png" class="card-img-top w-50" alt="..." />
+                      <span class="badge bg-danger position-absolute top-0 end-0">Limited</span>
+                    </div>
+                    <div class="card-body">
+                      <h6 class="card-title mb-3 fw-bold"><a href="#" class="link-dark">Jacobs Caffe Crema Classico</a></h6>
+                      <div class="">
+                        <p class="text-success mb-0">
+                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+                          ><i class="bi bi-star"></i><i class="bi bi-star"></i>
+                          <span>8 reviews</span>
+                        </p>
+                        <p class="text-secondary">24 drinks <i class="bi bi-dot"></i> Cup size XL</p>
+                      </div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between align-items-center">
+                      <p class="m-0 fs-3 fw-bolder text-success">CHF 7.95</p>
+                      <p class="m-0">
+                        <button
+                          class="btn rounded-circle p-0"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="bottom"
+                          data-bs-html="true"
+                          title="<div class='fw-bold'><em class='text-white'>Add to my basket</em> </div>"
+                        >
+                          <span class="text-success fs-1"><i class="bi bi-plus-circle-fill"></i></span>
+                        </button>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card finishes -->
+                <!-- Card starts -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
+                  <div class="card text-center text-md-start h-100">
+                    <div>
+                      <img src="./images/tassimo_jacobs_latte_macchiato_vanilla.png" class="card-img-top w-50" alt="..." />
+                    </div>
+                    <div class="card-body">
+                      <h6 class="card-title mb-3 fw-bold lh"><a href="#" class="link-dark">Jacobs Latte Machiato Vanilla</a></h6>
+                      <div class="">
+                        <p class="text-success mb-0">
+                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+                          ><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                          <span>14 reviews</span>
+                        </p>
+                        <p class="text-secondary">8 drinks <i class="bi bi-dot"></i> Cup size XL</p>
+                      </div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between align-items-center">
+                      <p class="m-0 fs-3 fw-bolder text-success">CHF 8.95</p>
+                      <p class="m-0">
+                        <button
+                          class="btn rounded-circle p-0"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="bottom"
+                          data-bs-html="true"
+                          title="<div class='fw-bold'><em class='text-white'>Add to my basket</em> </div>"
+                        >
+                          <span class="text-success fs-1"><i class="bi bi-plus-circle-fill"></i></span>
+                        </button>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card finishes -->
+                <!-- Card starts -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
+                  <div class="card text-center text-md-start h-100">
+                    <div class="position-relative">
+                      <img src="./images/tassimo_jacobs_cappuccino_classico.png" class="card-img-top w-50" alt="..." />
+                      <span class="badge bg-danger position-absolute top-0 end-0">Limited</span>
+                    </div>
+                    <div class="card-body">
+                      <h6 class="card-title mb-3 fw-bold"><a href="#" class="link-dark">Jacob's Cappuccino Classico</a></h6>
+                      <div class="">
+                        <p class="text-success mb-0">
+                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+                          ><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>
+                          <span>9 reviews</span>
+                        </p>
+                        <p class="text-secondary">8 drinks <i class="bi bi-dot"></i> Cup size L</p>
+                      </div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between align-items-center">
+                      <p class="m-0 fs-3 fw-bolder text-success">CHF 6.95</p>
+                      <p class="m-0">
+                        <button
+                          class="btn rounded-circle p-0"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="bottom"
+                          data-bs-html="true"
+                          title="<div class='fw-bold'><em class='text-white'>Add to my basket</em> </div>"
+                        >
+                          <span class="text-success fs-1"><i class="bi bi-plus-circle-fill"></i></span>
+                        </button>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card finishes -->
+                <!-- Card starts -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
+                  <div class="card text-center text-md-start h-100">
+                    <div>
+                      <img src="./images/tassimo_milka_hot_chocolate.png" class="card-img-top w-50" alt="..." />
+                    </div>
+                    <div class="card-body">
+                      <h6 class="card-title mb-3 fw-bold"><a href="#" class="link-dark">Milka Cacao Speciality</a></h6>
+                      <div>
+                        <p class="text-success mb-0">
+                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+                          ><i class="bi bi-star-half"></i><i class="bi bi-star"></i>
+                          <span>17 reviews</span>
+                        </p>
+                        <p class="text-secondary">8 drinks <i class="bi bi-dot"></i> Cup size L</p>
+                      </div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between align-items-center">
+                      <p class="m-0 fs-3 fw-bolder text-success">CHF 6.95</p>
+                      <p class="m-0">
+                        <button
+                          class="btn rounded-circle p-0"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="bottom"
+                          data-bs-html="true"
+                          title="<div class='fw-bold'><em class='text-white'>Add to my basket</em> </div>"
+                        >
+                          <span class="text-success fs-1"><i class="bi bi-plus-circle-fill"></i></span>
+                        </button>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card finishes -->
+                <!-- Card starts -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
+                  <div class="card text-center text-md-start h-100">
+                    <div>
+                      <img src="./images/tassimo_morning_cafe_mild_and_smooth.png" class="card-img-top w-50" alt="..." />
+                    </div>
+                    <div class="card-body">
+                      <h6 class="card-title mb-3 fw-bold"><a href="#" class="link-dark">Morning Café XL Mild & Smooth</a></h6>
+                      <div class="">
+                        <p class="text-success mb-0">
+                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+                          ><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                          <span>13 reviews</span>
+                        </p>
+                        <p class="text-secondary">21 drinks <i class="bi bi-dot"></i> Cup size XL</p>
+                      </div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between align-items-center">
+                      <p class="m-0 fs-3 fw-bolder text-success">CHF 8.95</p>
+                      <p class="m-0">
+                        <button
+                          class="btn rounded-circle p-0"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="bottom"
+                          data-bs-html="true"
+                          title="<div class='fw-bold'><em class='text-white'>Add to my basket</em> </div>"
+                        >
+                          <span class="text-success fs-1"><i class="bi bi-plus-circle-fill"></i></span>
+                        </button>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card finishes -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+      });
+    </script>
+    <script>
+      document.getElementById("toastbtn").onclick = function () {
+        var toastElList = [].slice.call(document.querySelectorAll(".toast"));
+        var toastList = toastElList.map(function (toastEl) {
+          return new bootstrap.Toast(toastEl, {Animation: true});
+        });
+        toastList.forEach((toast) => toast.show());
+      };
+    </script>
+  </body>
+</html>
